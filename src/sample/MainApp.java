@@ -22,6 +22,7 @@ public class MainApp extends Application {
 
     private Stage primaryStage;
     private BorderPane rootLayout;
+    private BorderPane personOverview;
 
     // list
     public ObservableList<Person> personData = FXCollections.observableArrayList();
@@ -74,12 +75,14 @@ public class MainApp extends Application {
         loader.setLocation(MainApp.class.getResource("../view/PersonOverview.fxml"));
         AnchorPane personOverview = (AnchorPane) loader.load();
 
+
         rootLayout.setCenter(personOverview);
 
         PersonOverviewController controller = loader.getController();
         controller.setMainApp(this);
 
     }
+
 
 
 

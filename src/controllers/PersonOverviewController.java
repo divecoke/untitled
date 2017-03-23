@@ -5,6 +5,7 @@ import javafx.collections.ObservableList;
 import javafx.collections.transformation.FilteredList;
 import javafx.collections.transformation.SortedList;
 import javafx.fxml.FXML;
+import javafx.scene.Node;
 import javafx.scene.control.*;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
@@ -179,6 +180,7 @@ public class PersonOverviewController {
             alert.showAndWait();
         }
     }
+
 
     public void setMainApp(MainApp mainApp) {
         this.mainApp = mainApp;

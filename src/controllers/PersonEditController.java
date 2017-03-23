@@ -81,6 +81,7 @@ public class PersonEditController {
             person.setCity(cityField.getText());
             person.setBirthday(birthdayField.getValue());
             person.setAdmin(cbAdmin.isSelected());
+            person.setImage(ivProfile.getImage());
 
             clicked = true;
             dialogStage.close();
@@ -155,7 +156,7 @@ public class PersonEditController {
         File file = fileChooser.showOpenDialog(new Stage());
         if (file != null) {
             String imagepath = file.toURI().toURL().toString();
-            //System.out.println("file:"+imagepath);
+            System.out.println("file:"+imagepath);
             Image image = new Image(imagepath);
             ivProfile.setImage(image);
         }

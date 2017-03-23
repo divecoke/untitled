@@ -52,7 +52,7 @@
       </GridPane>
       <Button layoutX="159.0" layoutY="261.0" onAction="#handleSubmit" text="Submit" AnchorPane.bottomAnchor="10.0" AnchorPane.rightAnchor="90.0" />
       <Button layoutX="319.0" layoutY="274.0" onAction="#handleCancel" text="Cancel" AnchorPane.bottomAnchor="10.0" AnchorPane.rightAnchor="10.0" />
-      <ImageView fitHeight="150.0" fitWidth="200.0" layoutX="98.0" layoutY="264.0" pickOnBounds="true" preserveRatio="true" />
+      <ImageView fx:id="ivProfile" fitHeight="150.0" fitWidth="200.0" layoutX="98.0" layoutY="264.0" pickOnBounds="true" preserveRatio="true" />
       <Button layoutX="14.0" layoutY="463.0" mnemonicParsing="false" onAction="#handleFileChooserImage" text="Upload" AnchorPane.bottomAnchor="10.0" AnchorPane.leftAnchor="10.0" />
    </children>
 </AnchorPane>

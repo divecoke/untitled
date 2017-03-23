@@ -25,7 +25,7 @@
    <children>
       <BorderPane AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
          <bottom>
-            <TabPane maxHeight="-Infinity" minHeight="300.0" prefHeight="300.0" tabClosingPolicy="UNAVAILABLE" tabMinHeight="10.0" BorderPane.alignment="CENTER">
+            <TabPane maxHeight="-Infinity" tabClosingPolicy="UNAVAILABLE" tabMinHeight="10.0" BorderPane.alignment="CENTER">
                <tabs>
                   <Tab text="Users">
                      <content>
@@ -65,7 +65,7 @@
          <center>
             <AnchorPane BorderPane.alignment="CENTER">
                <children>
-                  <ImageView fx:id="ivProfile" fitHeight="150.0" fitWidth="200.0" layoutX="-2.0" layoutY="29.0" pickOnBounds="true" preserveRatio="true" />
+                  <Pagination fx:id="pPagination" layoutX="-17.0" layoutY="78.0" prefHeight="200.0" prefWidth="200.0" />
                </children></AnchorPane>
          </center>
          <right>
@@ -86,6 +86,7 @@
                         <Cursor fx:constant="HAND" />
                      </cursor>
                   </Button>
+                  <ImageView fx:id="ivProfile" fitHeight="246.0" fitWidth="271.0" layoutX="-145.0" layoutY="-4.0" pickOnBounds="true" preserveRatio="true" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0" />
                </children>
             </AnchorPane>
          </right>

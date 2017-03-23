@@ -55,16 +55,14 @@ public class Person {
         this.lastName = new SimpleStringProperty(lastName);
 
         // dummy
-        File file = new File("/images/arrow-32-128.png");
-        Image image = new Image(file.toURI().toString());
-
-
         this.email = new SimpleStringProperty("lakis22@gmail.com");
         this.street = new SimpleStringProperty("avenue st. 32-24");
         this.postalCode = new SimpleIntegerProperty(94118);
         this.city = new SimpleStringProperty("Klaipeda");
         this.birthday = new SimpleObjectProperty<LocalDate>(LocalDate.of(1997, 2, 7));
         this.admin = new SimpleBooleanProperty(false);
+        File file = new File("/home/dive/IdeaProjects/untitled/src/images/arrow-32-128.png");
+        Image image = new Image(file.toURI().toString());
         this.image = new SimpleObjectProperty<Image>(image);
 
 
