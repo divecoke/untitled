@@ -1,8 +1,10 @@
 package model;
 
+import java.io.File;
 import java.time.LocalDate;
 
 import javafx.beans.property.*;
+import javafx.scene.image.Image;
 
 public class Person {
 
@@ -17,6 +19,20 @@ public class Person {
     private final StringProperty city;
     private final ObjectProperty<LocalDate> birthday;
     private final BooleanProperty admin;
+    private final ObjectProperty<Image> image;
+
+
+    public Image getImage() {
+        return image.get();
+    }
+
+    public ObjectProperty<Image> imageProperty() {
+        return image;
+    }
+
+    public void setImage(Image image) {
+        this.image.set(image);
+    }
 
     public Person() {
         this(null, null);
@@ -39,12 +55,19 @@ public class Person {
         this.lastName = new SimpleStringProperty(lastName);
 
         // dummy
+        File file = new File("/images/arrow-32-128.png");
+        Image image = new Image(file.toURI().toString());
+
+
         this.email = new SimpleStringProperty("lakis22@gmail.com");
         this.street = new SimpleStringProperty("avenue st. 32-24");
         this.postalCode = new SimpleIntegerProperty(94118);
         this.city = new SimpleStringProperty("Klaipeda");
         this.birthday = new SimpleObjectProperty<LocalDate>(LocalDate.of(1997, 2, 7));
         this.admin = new SimpleBooleanProperty(false);
+        this.image = new SimpleObjectProperty<Image>(image);
+
+
     }
 
 

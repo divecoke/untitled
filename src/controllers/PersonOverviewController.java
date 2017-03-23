@@ -6,9 +6,16 @@ import javafx.collections.transformation.FilteredList;
 import javafx.collections.transformation.SortedList;
 import javafx.fxml.FXML;
 import javafx.scene.control.*;
+import javafx.scene.image.Image;
+import javafx.scene.image.ImageView;
+import javafx.stage.FileChooser;
+import javafx.stage.Stage;
 import model.Person;
 import sample.MainApp;
 
+import java.io.File;
+import java.net.MalformedURLException;
+import java.util.List;
 import java.util.Optional;
 
 public class PersonOverviewController {
@@ -40,19 +47,20 @@ public class PersonOverviewController {
     private Label birthdayLabel;
     @FXML
     private TextField filterField;
+    @FXML
+    private ImageView ivProfile;
 
     public CheckBox cbAdmin;
 
 
     private MainApp mainApp;
 
+
     public PersonOverviewController() {
+
     }
 
-    /**
-     * Initializes the controller class. This method is automatically called
-     * after the fxml file has been loaded.
-     */
+
     @FXML
     private void initialize() {
         firstNameColumn.setCellValueFactory(cellData -> cellData.getValue().firstNameProperty());
@@ -102,6 +110,8 @@ public class PersonOverviewController {
             birthdayLabel.setText(person.getBirthday().toString());
             cbAdmin.setSelected(person.isAdmin());
             cbAdmin.setDisable(true);
+            ivProfile.setImage(person.getImage());
+
         } else {
             firstNameLabel.setText("");
             lastNameLabel.setText("");
@@ -112,6 +122,7 @@ public class PersonOverviewController {
             birthdayLabel.setText("");
             cbAdmin.setDisable(true);
             cbAdmin.setSelected(false);
+            ivProfile.setImage(null);
 
         }
     }
@@ -168,8 +179,6 @@ public class PersonOverviewController {
             alert.showAndWait();
         }
     }
-
-
 
     public void setMainApp(MainApp mainApp) {
         this.mainApp = mainApp;

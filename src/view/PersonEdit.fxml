@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import javafx.scene.image.*?>
 <?import java.lang.*?>
 <?import javafx.scene.control.*?>
 <?import javafx.scene.layout.*?>
@@ -13,7 +14,7 @@
 <?import javafx.scene.layout.GridPane?>
 <?import javafx.scene.layout.RowConstraints?>
 
-<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="400.0" stylesheets="@../bootstrap.css" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controllers.PersonEditController">
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="500.0" prefWidth="400.0" stylesheets="@../bootstrap.css" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controllers.PersonEditController">
    <children>
       <GridPane layoutX="140.0" layoutY="56.0" AnchorPane.leftAnchor="10.0" AnchorPane.rightAnchor="10.0" AnchorPane.topAnchor="10.0">
         <columnConstraints>
@@ -51,5 +52,7 @@
       </GridPane>
       <Button layoutX="159.0" layoutY="261.0" onAction="#handleSubmit" text="Submit" AnchorPane.bottomAnchor="10.0" AnchorPane.rightAnchor="90.0" />
       <Button layoutX="319.0" layoutY="274.0" onAction="#handleCancel" text="Cancel" AnchorPane.bottomAnchor="10.0" AnchorPane.rightAnchor="10.0" />
+      <ImageView fitHeight="150.0" fitWidth="200.0" layoutX="98.0" layoutY="264.0" pickOnBounds="true" preserveRatio="true" />
+      <Button layoutX="14.0" layoutY="463.0" mnemonicParsing="false" onAction="#handleFileChooserImage" text="Upload" AnchorPane.bottomAnchor="10.0" AnchorPane.leftAnchor="10.0" />
    </children>
 </AnchorPane>

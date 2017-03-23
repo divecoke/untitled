@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import javafx.scene.image.*?>
 <?import javafx.scene.text.*?>
 <?import java.lang.*?>
 <?import javafx.geometry.*?>
@@ -62,22 +63,25 @@
             </TabPane>
          </bottom>
          <center>
-            <AnchorPane BorderPane.alignment="CENTER" />
+            <AnchorPane BorderPane.alignment="CENTER">
+               <children>
+                  <ImageView fx:id="ivProfile" fitHeight="150.0" fitWidth="200.0" layoutX="-2.0" layoutY="29.0" pickOnBounds="true" preserveRatio="true" />
+               </children></AnchorPane>
          </center>
          <right>
             <AnchorPane prefHeight="200.0" prefWidth="200.0" BorderPane.alignment="CENTER">
                <children>
-                  <Button layoutX="60.0" layoutY="248.0" mnemonicParsing="false" onAction="#handleEditPerson" prefHeight="25.0" prefWidth="60.0" text="Edit" textFill="WHITE" AnchorPane.rightAnchor="75.0">
+                  <Button layoutX="60.0" layoutY="248.0" mnemonicParsing="false" onAction="#handleEditPerson" prefHeight="25.0" prefWidth="53.0" text="Edit" textFill="WHITE" AnchorPane.rightAnchor="82.0">
                      <cursor>
                         <Cursor fx:constant="HAND" />
                      </cursor>
                   </Button>
-                  <Button fx:id="bDelete" layoutX="134.0" layoutY="248.0" mnemonicParsing="false" onAction="#handleDeletePerson" prefHeight="25.0" prefWidth="60.0" text="Delete" textFill="WHITE" AnchorPane.rightAnchor="5.0">
+                  <Button fx:id="bDelete" layoutX="134.0" layoutY="248.0" mnemonicParsing="false" onAction="#handleDeletePerson" prefHeight="25.0" prefWidth="74.0" text="Delete" textFill="WHITE" AnchorPane.rightAnchor="0.0">
                      <cursor>
                         <Cursor fx:constant="HAND" />
                      </cursor>
                   </Button>
-                  <Button layoutX="7.0" layoutY="248.0" mnemonicParsing="false" onAction="#handleNewPerson" prefWidth="60.0" text="New.." textFill="WHITE" AnchorPane.rightAnchor="145.0">
+                  <Button layoutX="7.0" layoutY="248.0" mnemonicParsing="false" onAction="#handleNewPerson" prefWidth="67.0" text="New" textFill="WHITE" AnchorPane.rightAnchor="145.0">
                      <cursor>
                         <Cursor fx:constant="HAND" />
                      </cursor>
