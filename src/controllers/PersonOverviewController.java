@@ -9,12 +9,16 @@ import javafx.scene.Node;
 import javafx.scene.control.*;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
+import javafx.scene.layout.BorderPane;
+import javafx.scene.layout.VBox;
 import javafx.stage.FileChooser;
 import javafx.stage.Stage;
+import javafx.util.Callback;
 import model.Person;
 import sample.MainApp;
 
 import java.io.File;
+import java.lang.reflect.InvocationTargetException;
 import java.net.MalformedURLException;
 import java.util.List;
 import java.util.Optional;
@@ -52,18 +56,43 @@ public class PersonOverviewController {
     private ImageView ivProfile;
 
     public CheckBox cbAdmin;
+    @FXML
+    private Pagination pPagination;
 
-
+    @FXML
+    private Label pagLabel;
     private MainApp mainApp;
-
 
     public PersonOverviewController() {
 
     }
 
+    public int itemsPerPage() {
+        return 8;
+    }
+
+    public int rowsPerPage() {
+        return 2;
+    }
+
+    public VBox createPage(int pageIndex) {
+        VBox box = new VBox(5);
+        int page = pageIndex * itemsPerPage();
+        for (int i = page; i < page + itemsPerPage(); i++) {
+            VBox element = new VBox();
+            Hyperlink link = new Hyperlink("Item " + (i+1));
+            link.setVisited(true);
+            pagLabel.setText(link.getText());
+            //Label text = new Label("Search results\nfor "+ link.getText());
+            element.getChildren().addAll(link, pagLabel);
+            box.getChildren().add(element);
+        }
+        return box;
+    }
 
     @FXML
     private void initialize() {
+
         firstNameColumn.setCellValueFactory(cellData -> cellData.getValue().firstNameProperty());
         lastNameColumn.setCellValueFactory(cellData -> cellData.getValue().lastNameProperty());
         emailColumn.setCellValueFactory(cellData -> cellData.getValue().emailProperty());
@@ -74,12 +103,22 @@ public class PersonOverviewController {
         // listener for LIVE changes
         personTable.getSelectionModel().selectedItemProperty().addListener((observable, oldValue, newValue) -> showPersonDetails(newValue));
         //filterList();
+        /*pPagination = new Pagination(28, 0);
+        pPagination.setStyle("-fx-border-color:red;");
+        pPagination.setPageFactory(new Callback<Integer, Node>() {
+            @Override
+            public Node call(Integer pageIndex) {
+                return createPage(pageIndex);
+            }
+        });*/
+
     }
 
+    public FilteredList<Person> filteredList;
     @FXML
     public void filterList() {
-        //System.out.println(mainApp.getPersonData());
-        FilteredList<Person> filteredList = new FilteredList<>(mainApp.getPersonData(), p -> true);
+        System.out.println(mainApp.getPersonData());
+        filteredList = new FilteredList<>(mainApp.getPersonData(), p -> true);
 
         filterField.textProperty().addListener(((observable, oldValue, newValue) -> {
             filteredList.setPredicate(person -> {
@@ -130,7 +169,7 @@ public class PersonOverviewController {
 
     // delete person
     @FXML
-    private void handleDeletePerson() {
+    private void handleDeletePerson() throws Exception{
         int selectedIndex = personTable.getSelectionModel().getSelectedIndex();
         // error handling if no user selected
         if (selectedIndex >= 0) {
@@ -140,7 +179,9 @@ public class PersonOverviewController {
             alert.setContentText("Are you sure you want to delete?");
             Optional<ButtonType> result = alert.showAndWait();
             if (result.get() == ButtonType.OK) {
-                personTable.getItems().remove(selectedIndex);
+                // selects source index from main list
+                int sourceIndex = filteredList.getSourceIndexFor(mainApp.getPersonData(), selectedIndex);
+                mainApp.getPersonData().remove(sourceIndex);
             }
         } else {
             Alert alert = new Alert(Alert.AlertType.WARNING);
@@ -148,7 +189,6 @@ public class PersonOverviewController {
             alert.setContentText("Please select a person in the table.");
             alert.showAndWait();
         }
-
     }
 
     @FXML
@@ -182,9 +222,13 @@ public class PersonOverviewController {
     }
 
 
+
     public void setMainApp(MainApp mainApp) {
         this.mainApp = mainApp;
         // add list to table
+        //System.out.println(mainApp.getPersonData());
         personTable.setItems(mainApp.getPersonData());
+        filterList();
+
     }
 }

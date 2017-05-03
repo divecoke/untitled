@@ -66,6 +66,7 @@
             <AnchorPane BorderPane.alignment="CENTER">
                <children>
                   <Pagination fx:id="pPagination" layoutX="-17.0" layoutY="78.0" prefHeight="200.0" prefWidth="200.0" />
+                  <Label fx:id="pagLabel" layoutX="74.0" layoutY="139.0" text="Label" />
                </children></AnchorPane>
          </center>
          <right>
