@@ -4,7 +4,15 @@ import java.io.File;
 import java.time.LocalDate;
 
 import javafx.beans.property.*;
+import javafx.scene.control.ComboBox;
+import javafx.scene.control.ListCell;
+import javafx.scene.control.ListView;
+import javafx.scene.control.Slider;
 import javafx.scene.image.Image;
+import javafx.util.Callback;
+import util.LocalDateAdapter;
+
+import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
 
 public class Person {
 
@@ -21,6 +29,8 @@ public class Person {
     private final BooleanProperty admin;
     private final ObjectProperty<Image> image;
 
+    private final ComboBox cbCombo;
+    private final Slider sSlider;
 
     public Image getImage() {
         return image.get();
@@ -64,10 +74,21 @@ public class Person {
         File file = new File("/home/dive/IdeaProjects/untitled/src/images/arrow-32-128.png");
         Image image = new Image(file.toURI().toString());
         this.image = new SimpleObjectProperty<Image>(image);
-
-
+        this.cbCombo = new ComboBox();
+        this.cbCombo.setValue("Normal");
+        this.sSlider = new Slider();
+        this.sSlider.setValue(80);
     }
 
+
+    public ComboBox getCbCombo() {
+        return cbCombo;
+    }
+    //public void setCbCombo(String sSlider) { this.sSlider.setValue(sSlider); }
+    public Slider getsSlider() {
+        return sSlider;
+    }
+    public void setsSlider(Integer sSlider) { this.sSlider.setValue(sSlider); }
 
     public String getEmail() {
         return email.get();
@@ -140,7 +161,7 @@ public class Person {
     public StringProperty cityProperty() {
         return city;
     }
-
+    @XmlJavaTypeAdapter(LocalDateAdapter.class)
     public LocalDate getBirthday() {
         return birthday.getValue();
     }

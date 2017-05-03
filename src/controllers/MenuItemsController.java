@@ -7,7 +7,7 @@ import javafx.scene.control.Alert;
  */
 public class MenuItemsController {
 
-    public void handleAbout() {
+    /*public void handleAbout() {
         Alert alert = new Alert(Alert.AlertType.INFORMATION);
         alert.setTitle("Information");
         alert.setHeaderText("About");
@@ -22,6 +22,6 @@ public class MenuItemsController {
         alert.setHeaderText("How to use?");
         alert.setContentText("If you want to create a new user click New..\nIf you want to edit user, select user and click Edit\nIf you want to delete user, select user and click Del..");
         alert.showAndWait();
-    }
+    }*/
 
 }

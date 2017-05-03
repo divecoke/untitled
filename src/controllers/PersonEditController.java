@@ -1,10 +1,7 @@
 package controllers;
 
 import javafx.fxml.FXML;
-import javafx.scene.control.Alert;
-import javafx.scene.control.CheckBox;
-import javafx.scene.control.DatePicker;
-import javafx.scene.control.TextField;
+import javafx.scene.control.*;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import javafx.stage.FileChooser;
@@ -36,7 +33,11 @@ public class PersonEditController {
     public CheckBox cbAdmin;
     @FXML
     private ImageView ivProfile;
+    @FXML
+    private ComboBox cbCombo;
 
+    @FXML
+    private Slider sSlider;
 
 
 
@@ -66,7 +67,8 @@ public class PersonEditController {
         if (person.getImage() != null) {
             ivProfile.setImage(person.getImage());
         }
-
+        cbCombo.setValue(person.getCbCombo().getValue());
+        sSlider.setValue(person.getsSlider().getValue());
 
     }
 
@@ -82,7 +84,7 @@ public class PersonEditController {
             person.setBirthday(birthdayField.getValue());
             person.setAdmin(cbAdmin.isSelected());
             person.setImage(ivProfile.getImage());
-
+            person.setsSlider((int) sSlider.getValue());
             clicked = true;
             dialogStage.close();
         }
