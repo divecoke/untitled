@@ -1,33 +1,30 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import javafx.scene.image.*?>
-<?import javafx.scene.text.*?>
-<?import java.lang.*?>
-<?import javafx.geometry.*?>
-<?import javafx.scene.*?>
-<?import javafx.scene.control.*?>
-<?import javafx.scene.layout.*?>
 <?import javafx.geometry.Insets?>
 <?import javafx.scene.Cursor?>
 <?import javafx.scene.control.Button?>
+<?import javafx.scene.control.CheckBox?>
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.control.Tab?>
 <?import javafx.scene.control.TabPane?>
 <?import javafx.scene.control.TableColumn?>
 <?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.control.TitledPane?>
+<?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.layout.BorderPane?>
 <?import javafx.scene.layout.ColumnConstraints?>
 <?import javafx.scene.layout.GridPane?>
 <?import javafx.scene.layout.RowConstraints?>
 
-<AnchorPane prefHeight="500.0" prefWidth="600.0" stylesheets="@../bootstrap.css" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controllers.PersonOverviewController">
+<AnchorPane prefHeight="500.0" prefWidth="600.0" stylesheets="@../bootstrap.css" xmlns="http://javafx.com/javafx/8.0.121" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controllers.PersonOverviewController">
    <children>
       <BorderPane AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
          <bottom>
             <TabPane maxHeight="-Infinity" tabClosingPolicy="UNAVAILABLE" tabMinHeight="10.0" BorderPane.alignment="CENTER">
                <tabs>
-                  <Tab text="Users">
+                  <Tab text="Users | Exp">
                      <content>
                         <AnchorPane>
                            <children>
@@ -63,11 +60,7 @@
             </TabPane>
          </bottom>
          <center>
-            <AnchorPane BorderPane.alignment="CENTER">
-               <children>
-                  <Pagination fx:id="pPagination" layoutX="-17.0" layoutY="78.0" prefHeight="200.0" prefWidth="200.0" />
-                  <Label fx:id="pagLabel" layoutX="74.0" layoutY="139.0" text="Label" />
-               </children></AnchorPane>
+            <AnchorPane BorderPane.alignment="CENTER" />
          </center>
          <right>
             <AnchorPane prefHeight="200.0" prefWidth="200.0" BorderPane.alignment="CENTER">

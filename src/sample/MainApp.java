@@ -15,6 +15,7 @@ import model.Person;
 import controllers.PersonEditController;
 import controllers.PersonOverviewController;
 import model.PersonListWrapper;
+import view.RootLayoutController;
 
 import javax.xml.bind.JAXBContext;
 import javax.xml.bind.Marshaller;
@@ -70,6 +71,9 @@ public class MainApp extends Application {
         Scene scene = new Scene(rootLayout);
         scene.getStylesheets().add(MainApp.class.getResource("/bootstrap.css").toExternalForm());
         primaryStage.setScene(scene);
+
+        RootLayoutController controller = loader.getController();
+        controller.setMainApp(this);
         //primaryStage.setResizable(false);
         primaryStage.show();
 

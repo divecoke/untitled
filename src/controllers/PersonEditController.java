@@ -68,7 +68,7 @@ public class PersonEditController {
             ivProfile.setImage(person.getImage());
         }
         cbCombo.setValue(person.getCbCombo().getValue());
-        sSlider.setValue(person.getsSlider().getValue());
+        sSlider.setValue(person.getsSlider());
 
     }
 

@@ -117,7 +117,7 @@ public class PersonOverviewController {
     public FilteredList<Person> filteredList;
     @FXML
     public void filterList() {
-        System.out.println(mainApp.getPersonData());
+        //System.out.println(mainApp.getPersonData());
         filteredList = new FilteredList<>(mainApp.getPersonData(), p -> true);
 
         filterField.textProperty().addListener(((observable, oldValue, newValue) -> {
