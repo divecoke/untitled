@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<persons>
+    <person>
+        <admin>true</admin>
+        <birthday>1997-02-07</birthday>
+        <city>Klaipeda</city>
+        <email>lakis22@gmail.com</email>
+        <firstName>Mindaugas</firstName>
+        <lastName>Poskus</lastName>
+        <postalCode>94118</postalCode>
+        <street>avenue st. 32-24</street>
+        <sSlider>100</sSlider>
+    </person>
+    <person>
+        <admin>false</admin>
+        <birthday>1989-02-22</birthday>
+        <city>Oster</city>
+        <email>BelvaCHawkins@armyspy.com</email>
+        <firstName>John</firstName>
+        <lastName>Av</lastName>
+        <postalCode>41541</postalCode>
+        <street>559 Golf Course Drive</street>
+        <sSlider>80</sSlider>
+    </person>
+    <person>
+        <admin>false</admin>
+        <birthday>1997-02-24</birthday>
+        <city>Michigan</city>
+        <email>JeffreyBLewis@jourrapide.com</email>
+        <firstName>Ker</firstName>
+        <lastName>Kim</lastName>
+        <postalCode>54457</postalCode>
+        <street>2387 Kimberly Way</street>
+        <sSlider>37</sSlider>
+    </person>
+    <person>
+        <admin>false</admin>
+        <birthday>1984-02-27</birthday>
+        <city>New York</city>
+        <email>FredaAHall@jourrapide.com</email>
+        <firstName>Freda</firstName>
+        <lastName>He</lastName>
+        <postalCode>10011</postalCode>
+        <street>1344 Turkey Pen Road</street>
+        <sSlider>80</sSlider>
+    </person>
+    <person>
+        <admin>false</admin>
+        <birthday>1997-02-07</birthday>
+        <city>Klaipeda</city>
+        <email>lakis22@gmail.com</email>
+        <firstName>Iterpimas</firstName>
+        <lastName>Naujas</lastName>
+        <postalCode>94118</postalCode>
+        <street>avenue st. 32-24</street>
+        <sSlider>0</sSlider>
+    </person>
+</persons>
