@@ -12,12 +12,12 @@ import sample.MainApp;
 import java.io.File;
 import java.util.Optional;
 
+
 /**
  * Created by Minde on 5/3/2017.
  */
 public class RootLayoutController {
     private MainApp mainApp;
-    private PersonOverviewController personOverviewController;
     public void setMainApp(MainApp mainApp) {
         this.mainApp = mainApp;
     }
@@ -82,7 +82,6 @@ public class RootLayoutController {
         alert.setTitle("Information");
         alert.setHeaderText("About");
         alert.setContentText("Mindaugas Poškus\nI11-2 grupė 2017 metai\nKlaipėdos valstybinė kolegija\n------------------------------------\nJava versija 1.8.0");
-
         alert.showAndWait();
     }
     @FXML
@@ -96,7 +95,9 @@ public class RootLayoutController {
                 "If you want to save a current file click File>Save(CTRL+3)\n" +
                 "If you want to save to a new file click File>Save As\n" +
                 "If you want to open a new file click File>Open(CTRL+2)\n" +
-                "If you watn to exit click File>Exit(CTRL+Q)");
+                "If you want to exit click File>Exit(CTRL+Q)\n" +
+                "if you want to open a screen with FAQ Help>FAQ (CTRL+F2)\n" +
+                "If you want to open a screen with About the program information Help>About(CTRL+F1)");
         alert.showAndWait();
     }
 
@@ -111,7 +112,13 @@ public class RootLayoutController {
 
     @FXML
     private void handleExit() {
-        System.exit(0);
+        Alert alert = new Alert(Alert.AlertType.CONFIRMATION);
+        alert.setTitle("Confirmation Dialog");
+        alert.setContentText("Are you sure you want to quit?");
+        Optional<ButtonType> result = alert.showAndWait();
+        if (result.get() == ButtonType.OK) {
+            System.exit(0);
+        }
     }
 
 }

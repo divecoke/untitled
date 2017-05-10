@@ -191,6 +191,12 @@ public class MainApp extends Application {
 
             // Save the file path to the registry.
             setPersonFilePath(file);
+
+            Alert alert = new Alert(Alert.AlertType.INFORMATION);
+            alert.setTitle("Information");
+            alert.setHeaderText("Successful");
+            alert.setContentText("Successfully Saved!");
+            alert.showAndWait();
         } catch (Exception e) { // catches ANY exception
             Alert alert = new Alert(Alert.AlertType.ERROR);
             alert.setTitle("Error");

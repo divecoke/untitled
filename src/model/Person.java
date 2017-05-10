@@ -30,12 +30,7 @@ public class Person {
     private final ComboBox cbCombo;
     private final IntegerProperty sSlider;
 
-    public Person() {
-        this(null, null);
-    }
-    public boolean isAdmin() {
-        return admin.get();
-    }
+
 
     public Person(String firstName, String lastName) {
         this.firstName = new SimpleStringProperty(firstName);
@@ -55,6 +50,13 @@ public class Person {
         this.cbCombo = new ComboBox();
         this.cbCombo.setValue("Normal");
 
+    }
+
+    public Person() {
+        this(null, null);
+    }
+    public boolean isAdmin() {
+        return admin.get();
     }
 
     // SETTERS

@@ -1,12 +1,19 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import javafx.scene.text.*?>
+<?import javafx.scene.*?>
+<?import com.jfoenix.controls.*?>
+<?import java.lang.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.input.*?>
+<?import javafx.scene.layout.*?>
 <?import javafx.scene.control.Menu?>
 <?import javafx.scene.control.MenuBar?>
 <?import javafx.scene.control.MenuItem?>
 <?import javafx.scene.input.KeyCodeCombination?>
 <?import javafx.scene.layout.BorderPane?>
 
-<BorderPane prefHeight="600.0" prefWidth="800.0" stylesheets="@../bootstrap.css" xmlns="http://javafx.com/javafx/8.0.121" xmlns:fx="http://javafx.com/fxml/1" fx:controller="view.RootLayoutController">
+<BorderPane prefHeight="600.0" prefWidth="800.0" stylesheets="@../bootstrap.css" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="view.RootLayoutController">
    <top>
       <MenuBar BorderPane.alignment="CENTER">
         <menus>
@@ -15,39 +22,100 @@
               <MenuItem mnemonicParsing="false" onAction="#handleNew" text="New">
                      <accelerator>
                         <KeyCodeCombination alt="UP" code="DIGIT1" control="DOWN" meta="UP" shift="UP" shortcut="UP" />
-                     </accelerator></MenuItem>
+                     </accelerator>
+                     <graphic>
+                        <Label text="?" textFill="#4400ff">
+                           <tooltip>
+                              <Tooltip text="Erases current data and creates a new file" />
+                           </tooltip>
+                        </Label>
+                     </graphic></MenuItem>
                   <MenuItem mnemonicParsing="false" onAction="#handleOpen" text="Open...">
+                      
                      <accelerator>
                         <KeyCodeCombination alt="UP" code="DIGIT2" control="DOWN" meta="UP" shift="UP" shortcut="UP" />
                      </accelerator>
+                     <graphic>
+                        <Label text="?" textFill="#4400ff">
+                           <tooltip>
+                              <Tooltip text="Opens a new XML file" />
+                           </tooltip>
+                        </Label>
+                     </graphic>
                   </MenuItem>
                   <MenuItem mnemonicParsing="false" onAction="#handleSave" text="Save">
                      <accelerator>
                         <KeyCodeCombination alt="UP" code="DIGIT3" control="DOWN" meta="UP" shift="UP" shortcut="UP" />
                      </accelerator>
+                     <graphic>
+                        <Label text="?" textFill="#4400ff">
+                           <tooltip>
+                              <Tooltip text="Saves current file with data" />
+                           </tooltip>
+                        </Label>
+                     </graphic>
                   </MenuItem>
                   <MenuItem mnemonicParsing="false" onAction="#handleSaveAs" text="Save As..." />
                   <MenuItem mnemonicParsing="false" onAction="#handleExit" text="Exit">
                      <accelerator>
                         <KeyCodeCombination alt="UP" code="Q" control="DOWN" meta="UP" shift="UP" shortcut="UP" />
-                     </accelerator></MenuItem>
+                     </accelerator>
+                     <graphic>
+                        <Label text="?" textFill="#4400ff">
+                           <tooltip>
+                              <Tooltip text="Exits program" />
+                           </tooltip>
+                        </Label>
+                     </graphic></MenuItem>
             </items>
           </Menu>
           <Menu mnemonicParsing="false" text="Edit">
+
             <items>
                   <MenuItem mnemonicParsing="false" onAction="#handleNewPerson" text="New">
+
                      <accelerator>
                         <KeyCodeCombination alt="UP" code="N" control="DOWN" meta="UP" shift="UP" shortcut="UP" />
-                     </accelerator></MenuItem>
+                         
+                     </accelerator>
+                     <graphic>
+                        <Label text="?" textFill="#4400ff">
+                           <tooltip>
+                              <Tooltip text="Opens a new screen with user creation" />
+                           </tooltip>
+                        </Label>
+                     </graphic></MenuItem>
             </items>
+
           </Menu>
           <Menu mnemonicParsing="false" text="Help">
             <items>
-              <MenuItem fx:id="bAbout" mnemonicParsing="false" onAction="#handleAbout" text="About" />
-                  <MenuItem fx:id="bFaq" mnemonicParsing="false" onAction="#handleFaq" text="FAQ" />
+              <MenuItem fx:id="bAbout" mnemonicParsing="false" onAction="#handleAbout" text="About">
+                     <accelerator>
+                        <KeyCodeCombination alt="UP" code="F1" control="DOWN" meta="UP" shift="UP" shortcut="UP" />
+                     </accelerator>
+                     <graphic>
+                        <Label text="?" textFill="#4400ff">
+                           <tooltip>
+                              <Tooltip text="Opens a screen with about program information" />
+                           </tooltip>
+                        </Label>
+                     </graphic></MenuItem>
+                  <MenuItem fx:id="bFaq" mnemonicParsing="false" onAction="#handleFaq" text="FAQ">
+                     <graphic>
+                        <Label text="?" textFill="#4400ff">
+                           <tooltip>
+                              <Tooltip text="Opens a screen with how to use" />
+                           </tooltip>
+                        </Label>
+                     </graphic>
+                     <accelerator>
+                        <KeyCodeCombination alt="UP" code="F2" control="DOWN" meta="UP" shift="UP" shortcut="UP" />
+                     </accelerator></MenuItem>
             </items>
           </Menu>
         </menus>
+
       </MenuBar>
    </top>
 </BorderPane>
